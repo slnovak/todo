@@ -37,3 +37,20 @@ impl Encodable for Todo {
         })
     }
 }
+
+#[cfg(test)]
+mod test {
+    use super::Todo;
+
+    #[test]
+    fn test_from_json() {
+        let todo = try!(Todo::from_json("{\"description\":\"Hello world\"}"));
+        assert_eq!(todo.description, "Hello world".to_string());
+    }
+
+    fn test_to_json() {
+        let todo = Todo { description: "Hello world".to_string() };
+        let json = try!(todo.to_json());
+        assert_eq!(json, "{\"description\":\"Hello world\"}".to_string());
+    }
+}
