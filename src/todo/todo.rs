@@ -11,8 +11,8 @@ pub struct Todo {
 }
 
 impl Todo {
-    pub fn from_json(s: &str) -> json::DecodeResult<Todo> {
-        json::decode(&s) as json::DecodeResult<Todo>
+    pub fn from_json(content: &str) -> json::DecodeResult<Todo> {
+        json::decode(&content)
     }
 
     pub fn to_json(&self) -> json::EncodeResult<String> {
