@@ -1,0 +1,7 @@
+[package]
+name = "todo"
+version = "0.1.0"
+authors = ["Stefan Novak <stefan@novak.io>"]
+
+[dependencies]
+rustc-serialize = "0.3"
