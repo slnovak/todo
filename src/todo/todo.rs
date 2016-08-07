@@ -44,13 +44,13 @@ mod test {
 
     #[test]
     fn test_from_json() {
-        let todo = try!(Todo::from_json("{\"description\":\"Hello world\"}"));
+        let todo = Todo::from_json("{\"description\":\"Hello world\"}").unwrap();
         assert_eq!(todo.description, "Hello world".to_string());
     }
 
     fn test_to_json() {
         let todo = Todo { description: "Hello world".to_string() };
-        let json = try!(todo.to_json());
+        let json = todo.to_json().unwrap();
         assert_eq!(json, "{\"description\":\"Hello world\"}".to_string());
     }
 }
